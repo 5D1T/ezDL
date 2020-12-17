@@ -1,16 +1,15 @@
 #ifndef FILE_H_INCLUDED
 #define FILE_H_INCLUDED
+
 #include <iostream>
 #include <fstream>
-using namespace std;
 
-#endif // FILE_H_INCLUDED
 
 class File
 {
 private:
-    ofstream writer;
-    ifstream reader;
+    std::ofstream writer;
+    std::ifstream reader;
     const char* data = NULL;
 
 public:
@@ -19,17 +18,17 @@ public:
     {
         if(path == NULL)
         {
-            cout<<"path for fileRead is null"<<endl;
+            std::cout << "The part for FileRead is NULL" << std::endl;
         }
-
-        reader.open(path,std::ifstream::in);
-
+        
+        reader.open(path, std::ifstream::in);
+        
         if(reader.is_open())
         {
             reader.seekg (0, reader.end);
             int length = reader.tellg();
             reader.seekg (0, reader.beg);
-
+            
             char* buffer = new char[length];
             reader.read(buffer,length);
 
@@ -39,18 +38,16 @@ public:
         }
         else
         {
-            cout<<"could not open file"<<endl;
+            std::cout << "Couldn't open file" << std::endl;
         }
-
-
     }
 
-    void Write(const char* path,const char* in)
+    void Write(const char* path, const char* in)
     {
         writer.open(path,ifstream::out);
         if(writer.is_open())
         {
-            writer<<in;
+            writer << in;
             writer.close();
         }
     }
@@ -60,16 +57,15 @@ public:
         writer.open(path,ifstream::trunc);
         if(writer.is_open())
         {
-            writer.write("",0);
+            writer.write("", 0);
             writer.close();
         }
         else
         {
-            cout<<"couldn't open file"<<endl;
+            std::cout << "Couldn't open the file" << std::endl;
         }
-
-
     }
-
-
 };
+
+
+#endif
