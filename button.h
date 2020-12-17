@@ -24,8 +24,8 @@ public:
             break;
         case SDL_MOUSEBUTTONUP: 
             if(click &&
-              (mouseX > params.x && mouseX < params.x + params.w) &&)
-              (mouseY > params.y && mouseY < params.y + params.h)
+              (mouseX > params.x && mouseX < params.x + params.w) &&
+              (mouseY > params.y && mouseY < params.y + params.h))
               flip ^= 1;
             click = false;
             break;
