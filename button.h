@@ -1,11 +1,9 @@
 #ifndef BUTTON_H_INCLUDED
 #define BUTTON_H_INCLUDED
+
 #include <iostream>
-#include<thread>
+#include <thread>
 
-using namespace std;
-
-#endif // BUTTON_H_INCLUDED
 
 class Button: public GUIelement
 {
@@ -16,37 +14,25 @@ private:
     bool click = false;
 
 public:
-    void Update(SDL_Event &e,bool &flip, SDL_Surface* &screen)  //passing by reference kinda thicc
+    void Update(SDL_Event &e, bool &flip, SDL_Surface* &screen)  //passing by reference kinda thicc
     {
-        SDL_GetMouseState(&mouseX,&mouseY);
+        SDL_GetMouseState(&mouseX, &mouseY);
         switch(e.type)
         {
         case SDL_MOUSEBUTTONDOWN:
-
             click = true;
             break;
-
-        case SDL_MOUSEBUTTONUP:
-            if (click)
-            {
-                if(mouseX > params.x && mouseX < params.x + params.w)
-                {
-                    if(mouseY > params.y && mouseY < params.y + params.h)
-                    {
-                        if(flip == true)
-                        {
-                            flip = false;
-                        }
-                        else
-                        {
-                            flip = true;
-                        }
-                    }
-                }
-            }
+        case SDL_MOUSEBUTTONUP: 
+            if(click &&
+              (mouseX > params.x && mouseX < params.x + params.w) &&)
+              (mouseY > params.y && mouseY < params.y + params.h)
+              flip ^= 1;
             click = false;
             break;
         }
-    SDL_BlitSurface(texture,&params,screen,&params);
+        SDL_BlitSurface(texture,&params,screen,&params);
     }
 };
+
+
+#endif
