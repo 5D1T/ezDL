@@ -1,11 +1,13 @@
-#ifndef EZDL_INCLUDER_H
-#define EZDL_INCLUDER_H
+#ifndef EZDL_ONEH_H
+#define EZDL_ONEH_H
 
 
 #include <iostream>
 #include <stdlib.h>
+
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_ttf.h"
+
 #include "window.h"
 #include "GUIelement.h"
 #include "button.h"
