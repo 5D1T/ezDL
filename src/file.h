@@ -1,9 +1,3 @@
-/*
-** file.h
-** Wrapper for <fstream> allowing much simpler file I/O
-*/
-
-
 #ifndef EZDL_FILE_H
 #define EZDL_FILE_H
 
@@ -30,9 +24,9 @@ public:
         
         if(reader.is_open())
         {
-            reader.seekg (0, reader.end);
+            reader.seekg(0, reader.end);
             int length = reader.tellg();
-            reader.seekg (0, reader.beg);
+            reader.seekg(0, reader.beg);
             
             char* buffer = new char[length];
             reader.read(buffer,length);
