@@ -40,7 +40,7 @@ public:
     void play(const char* path, int lenght)
     {
         std::thread t;
-        t = thread(playSound, path, lenght);
+        t = std::thread(playSound, path, lenght);
         t.detach();
     }
 };
