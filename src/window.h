@@ -1,11 +1,7 @@
-/*
-** window.h
-** Wrapper for SDL's window manipulation
-*/
-
-
 #ifndef EZDL_WINDOW_H
 #define EZDL_WINDOW_H
+
+#include <cstddef>
 
 
 class Window
@@ -19,7 +15,7 @@ public:
     SDL_Window* wh = NULL;
     SDL_Surface* screen = NULL;
 
-    Window(int x, int y, int w, int h, const char* name)
+    Window(size_t x, size_t y, size_t w, size_t h, const char* name)
     {
         m_screenrect.x = x;
         m_screenrect.y = y;
@@ -35,7 +31,7 @@ public:
     void update(bool &quitflag)
     {
         screen = SDL_GetWindowSurface(wh);
-        SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255,255,255));
+        SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
         while(SDL_PollEvent(&m_event) != 0)
         {
