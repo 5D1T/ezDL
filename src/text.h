@@ -1,5 +1,5 @@
-#ifndef TEXT_H_INCLUDED
-#define TEXT_H_INCLUDED
+#ifndef EZDL_TEXT_H
+#define EZDL_TEXT_H
 
 #include <iostream>
 
