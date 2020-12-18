@@ -19,7 +19,7 @@ private:
     bool m_click = false;
 
 public:
-    void update(const SDL_Event &e, bool &flip, SDL_Surface* &screen)
+    void update(const SDL_Event &e, bool &flip, SDL_Surface* screen)
     {
         SDL_GetMouseState(&m_mouseX, &m_mouseY);
         switch(e.type)
