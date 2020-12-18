@@ -1,5 +1,5 @@
-#ifndef BUTTON_H_INCLUDED
-#define BUTTON_H_INCLUDED
+#ifndef EZDL_BUTTON_H
+#define EZDL_BUTTON_H
 
 #include <iostream>
 #include <thread>
