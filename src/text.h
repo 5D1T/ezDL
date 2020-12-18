@@ -9,11 +9,11 @@ class Text
 private:
     SDL_Color m_color = {255,255,255};
     SDL_Surface* m_textSurface = NULL;
-    SDL_Rect m_parameters;
+    SDL_Rect m_params;
     TTF_Font* m_ttffont = NULL;
 
 public:
-    Text(SDL_Color color, int fontsize, const char* font, SDL_Rect parameters)
+    Text(SDL_Color color, int fontsize, const char* font, SDL_Rect params)
     {
         // std::cout << ">> using font: " << font << std::endl;
         m_color = color;
@@ -31,7 +31,7 @@ public:
             std::cout << SDL_GetError() << std::endl;
         }
         
-       m_parameters = parameters;
+       m_params = params;
     }
 
     void Update(const char* text, SDL_Surface* &screen, bool visible)
@@ -39,7 +39,7 @@ public:
         if(visible)
         {
             m_textSurface = TTF_RenderText_Solid(m_ttffont, text, m_color);
-            SDL_BlitSurface(m_textSurface, NULL, screen, &m_parameters);
+            SDL_BlitSurface(m_textSurface, NULL, screen, &m_params);
         }
     }
 
