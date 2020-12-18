@@ -5,7 +5,7 @@
 #include <thread>
 
 
-class Button: public UIelement
+class EZDL_Button: public EZDL_UIelement
 {
 private:
     int m_mouseX = 0;
