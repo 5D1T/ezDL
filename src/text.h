@@ -14,7 +14,7 @@ private:
     TTF_Font* m_ttffont = NULL;
 
 public:
-    Text(SDL_Color color, size_t fontsize, const char* font, SDL_Rect params)
+    EZDL_Text(SDL_Color color, size_t fontsize, const char* font, SDL_Rect params)
     {
         // std::cout << ">> using font: " << font << std::endl;
         m_color = color;
