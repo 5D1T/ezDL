@@ -4,10 +4,10 @@
 #include <cstddef>
 
 
-class Window
+class EZDL_Window
 {
 private:
-    friend class GUIelement;
+    friend class EZDL_UIelement;
     SDL_Event m_event;
     SDL_Rect m_screenrect;
     
@@ -35,12 +35,6 @@ public:
 
         while(SDL_PollEvent(&m_event) != 0)
         {
-            /*
-            if(m_event.type == SDL_QUIT)
-            {
-                quitflag = true;
-            }
-            */
             quitflag = m_event.type == SDL_QUIT;
         }
     }
