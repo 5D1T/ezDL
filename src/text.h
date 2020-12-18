@@ -1,7 +1,7 @@
 #ifndef EZDL_TEXT_H
 #define EZDL_TEXT_H
 
-#include <cstdddef>
+#include <cstddef>
 #include <iostream>
 
 
