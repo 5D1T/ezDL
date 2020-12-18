@@ -5,7 +5,7 @@
 #include <iostream>
 
 
-class UIelement
+class EZDL_UIelement
 {
 protected:
     SDL_Rect m_params;
