@@ -1,7 +1,7 @@
 #ifndef EZDL_AUDIO_H
 #define EZDL_AUDIO_H
 
-#include <cstdddef>
+#include <cstddef>
 #include <iostream>
 #include <thread>
 
