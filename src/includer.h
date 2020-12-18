@@ -1,5 +1,5 @@
-#ifndef INCLUDER_H_INCLUDED
-#define INCLUDER_H_INCLUDED
+#ifndef EZDL_INCLUDER_H
+#define EZDL_INCLUDER_H
 
 
 #include <iostream>
