@@ -1,6 +1,6 @@
 /*
 ** button.h
-** A wrapper for GUIelement, allowing user-interaction
+** A wrapper for GUI-element, allowing simple user interaction
 */
 
 
