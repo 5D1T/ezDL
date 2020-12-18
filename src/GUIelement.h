@@ -1,3 +1,9 @@
+/*
+** GUIelement.h
+** Allows low-level GUI-element manipulation
+*/
+
+
 #ifndef EZDL_GUIELEMENT_H
 #define EZDL_GUIELEMENT_H
 
@@ -24,8 +30,6 @@ public:
             std::cout << SDL_GetError() << std::endl;
         }
     }
-
-
 };
 
 
