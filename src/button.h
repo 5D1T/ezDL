@@ -25,7 +25,8 @@ public:
             if(m_click &&
               (m_mouseX > m_params.x && m_mouseX < m_params.x + m_params.w) &&
               (m_mouseY > m_params.y && m_mouseY < m_params.y + m_params.h))
-			   flip = !flip;
+		 flip = true;
+            else flip = false;
             m_click = false;
             break;
         }
