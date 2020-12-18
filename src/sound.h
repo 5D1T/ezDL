@@ -1,12 +1,12 @@
-#ifndef EZDL_SOUND_H
-#define EZDL_SOUND_H
+#ifndef EZDL_AUDIO_H
+#define EZDL_AUDIO_H
 
 #include <cstdddef>
 #include <iostream>
 #include <thread>
 
 
-class Sound
+class EZDL_Audio
 {
 private:
     static void playSound(const char* path, size_t lenght)
