@@ -1,11 +1,11 @@
-#ifndef EZDL_GUIELEMENT_H
-#define EZDL_GUIELEMENT_H
+#ifndef EZDL_UIELEMENT_H
+#define EZDL_UIELEMENT_H
 
 #include <cstddef>
 #include <iostream>
 
 
-class GUIelement
+class UIelement
 {
 protected:
     SDL_Rect m_params;
@@ -20,7 +20,7 @@ public:
         m_texture = SDL_LoadBMP(path);
         if(m_texture == NULL) 
         {
-            std::cout << "Error: Texture of a GUI element is NULL" << std::endl;
+            std::cout << "Error: Texture of a UI element is NULL" << std::endl;
             std::cout << SDL_GetError() << std::endl;
         }
     }
