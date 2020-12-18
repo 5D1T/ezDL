@@ -1,5 +1,5 @@
-#ifndef GUIELEMENT_H_INCLUDED
-#define GUIELEMENT_H_INCLUDED
+#ifndef EZDL_GUIELEMENT_H
+#define EZDL_GUIELEMENT_H
 
 #include <iostream>
 
