@@ -18,7 +18,7 @@ public:
     {
         if(path == NULL)
         {
-            std::cout << "The part for FileRead is NULL" << std::endl;
+            std::cout << "Error: The part for FileRead is NULL" << std::endl;
         }
         
         reader.open(path, std::ifstream::in);
@@ -38,7 +38,7 @@ public:
         }
         else
         {
-            std::cout << "Couldn't open file" << std::endl;
+            std::cout << "Error: Couldn't open file" << std::endl;
         }
     }
 
@@ -62,7 +62,7 @@ public:
         }
         else
         {
-            std::cout << "Couldn't open the file" << std::endl;
+            std::cout << "Error: Couldn't open the file" << std::endl;
         }
     }
 };
