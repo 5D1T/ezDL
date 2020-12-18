@@ -27,15 +27,14 @@ public:
         }
     }
 
-    void update(bool &quitflag)
+    void update(bool &quit_flag)
     {
         screen = SDL_GetWindowSurface(wh);
         SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
         while(SDL_PollEvent(&m_event) != 0)
-        {
-            quitflag = m_event.type == SDL_QUIT;
-        }
+            if(m_event.type == SDL_QUIT)
+                quit_flag = true;
     }
 
     void clearScreen()
