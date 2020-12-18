@@ -8,7 +8,7 @@ int main(int argc, char** argv)
 	// Window
 	
 	bool quit = false;
-	Window window(100, 100, 1280, 720, "Button Test");
+	EZDL_Window window(100, 100, 1280, 720, "Button Test");
 	
 	// Button
 	
@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 	
 	SDL_Event e;
 	bool flip = false;
-	Button b;
+	EZDL_Button b;
 	b.start(x, y, width, height, texture_path);
 	
 	// Main loop
