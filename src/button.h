@@ -8,26 +8,25 @@
 class Button: public GUIelement
 {
 private:
-    bool quitflag = false;
-    int mouseX = 0;
-    int mouseY = 0;
-    bool click = false;
+    int m_mouseX = 0;
+    int m_mouseY = 0;
+    bool m_click = false;
 
 public:
-    void Update(SDL_Event &e, bool &flip, SDL_Surface* &screen)  //passing by reference kinda thicc
+    void Update(const SDL_Event &e, bool &flip, SDL_Surface* &screen)
     {
-        SDL_GetMouseState(&mouseX, &mouseY);
+        SDL_GetMouseState(&m_mouseX, &m_mouseY);
         switch(e.type)
         {
         case SDL_MOUSEBUTTONDOWN:
-            click = true;
+            m_click = true;
             break;
         case SDL_MOUSEBUTTONUP: 
             if(click &&
-              (mouseX > params.x && mouseX < params.x + params.w) &&
-              (mouseY > params.y && mouseY < params.y + params.h))
+              (m_mouseX > params.x && m_mouseX < params.x + params.w) &&
+              (m_mouseY > params.y && m_mouseY < params.y + params.h))
               flip ^= 1;
-            click = false;
+            m_click = false;
             break;
         }
         SDL_BlitSurface(texture, &params, screen, &params);
