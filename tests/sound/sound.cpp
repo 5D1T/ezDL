@@ -28,8 +28,8 @@ int main(int argc, char** argv)
 		window.clearScreen();
 		// ...
 		while(SDL_PollEvent(&e) != 0)
-        	if(e.type == SDL_QUIT)
-            	quit = true;		
+        		if(e.type == SDL_QUIT)
+            			quit = true;		
 	}
 	
 	SDL_Quit();
