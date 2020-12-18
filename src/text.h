@@ -1,3 +1,9 @@
+/*
+** text.h
+** Wrapper for SDL's text rendering
+*/
+
+
 #ifndef EZDL_TEXT_H
 #define EZDL_TEXT_H
 
@@ -34,7 +40,7 @@ public:
        m_params = params;
     }
 
-    void Update(const char* text, SDL_Surface* &screen, bool visible)
+    void update(const char* text, SDL_Surface* &screen, bool visible)
     {
         if(visible)
         {
@@ -43,7 +49,7 @@ public:
         }
     }
 
-    void Free()
+    void free()
     {
         TTF_CloseFont(m_ttffont);
         SDL_FreeSurface(m_textSurface);
