@@ -1,12 +1,7 @@
-/*
-** text.h
-** Wrapper for SDL's text rendering
-*/
-
-
 #ifndef EZDL_TEXT_H
 #define EZDL_TEXT_H
 
+#include <cstdddef>
 #include <iostream>
 
 
@@ -19,7 +14,7 @@ private:
     TTF_Font* m_ttffont = NULL;
 
 public:
-    Text(SDL_Color color, int fontsize, const char* font, SDL_Rect params)
+    Text(SDL_Color color, size_t fontsize, const char* font, SDL_Rect params)
     {
         // std::cout << ">> using font: " << font << std::endl;
         m_color = color;
@@ -40,7 +35,7 @@ public:
        m_params = params;
     }
 
-    void update(const char* text, SDL_Surface* &screen, bool visible)
+    void update(const char* text, SDL_Surface* screen, bool visible)
     {
         if(visible)
         {
