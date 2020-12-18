@@ -49,7 +49,7 @@ public:
 
     void write(const char* path, const char* in)
     {
-        writer.open(path,ifstream::out);
+        writer.open(path, std::ifstream::out);
         if(writer.is_open())
         {
             writer << in;
@@ -59,7 +59,7 @@ public:
 
     void clear(const char* path)
     {
-        writer.open(path,ifstream::trunc);
+        writer.open(path, std::ifstream::trunc);
         if(writer.is_open())
         {
             writer.write("", 0);
