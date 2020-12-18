@@ -1,5 +1,5 @@
-#ifndef WINDOW_H_INCLUDED
-#define WINDOW_H_INCLUDED
+#ifndef EZDL_WINDOW_H
+#define EZDL_WINDOW_H
 
 
 class Window
