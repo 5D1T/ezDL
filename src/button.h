@@ -35,7 +35,7 @@ public:
             m_click = false;
             break;
         }
-        SDL_BlitSurface(texture, &params, screen, &params);
+        SDL_BlitSurface(m_texture, &params, screen, &params);
     }
 };
 
