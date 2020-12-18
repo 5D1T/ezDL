@@ -5,7 +5,7 @@
 #include <iostream>
 
 
-class Text
+class EZDL_Text
 {
 private:
     SDL_Color m_color = {255,255,255};
