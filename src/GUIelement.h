@@ -1,6 +1,7 @@
 #ifndef EZDL_GUIELEMENT_H
 #define EZDL_GUIELEMENT_H
 
+#include <cstddef>
 #include <iostream>
 
 
@@ -10,14 +11,13 @@ protected:
     SDL_Rect m_params;
     SDL_Surface* m_texture = NULL;
 public:
-    void start(int x, int y, int h, int w, const char* path)
+    void start(size_t x, size_t y, size_t h, size_t w, const char* path)
     {
         m_params.x = x;
         m_params.y = y;
         m_params.h = h;
         m_params.w = w;
         m_texture = SDL_LoadBMP(path);
-        // std::cout << "path: " << path << std::endl;
         if(m_texture == NULL) 
         {
             std::cout << "Error: Texture of a GUI element is NULL" << std::endl;
