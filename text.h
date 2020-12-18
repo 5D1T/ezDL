@@ -1,55 +1,54 @@
 #ifndef TEXT_H_INCLUDED
 #define TEXT_H_INCLUDED
+
 #include <iostream>
-using namespace std;
 
-
-
-#endif // TEXT_H_INCLUDED
 
 class Text
 {
 private:
-SDL_Color colour = {255,255,255};
-SDL_Surface* textSurface = NULL;
-SDL_Rect params;
-TTF_Font* ttffont = NULL;
-bool visible;
+    SDL_Color m_color = {255,255,255};
+    SDL_Surface* m_textSurface = NULL;
+    SDL_Rect m_parameters;
+    TTF_Font* m_ttffont = NULL;
 
 public:
-
-    Text(SDL_Color a,int fontsize, const char* font,SDL_Rect parameters)
+    Text(SDL_Color color, int fontsize, const char* font, SDL_Rect parameters)
     {
-        cout<<font<<endl;
-        colour = a;
-        ttffont = TTF_OpenFont(font, fontsize);
-        params = parameters;
+        // std::cout << ">> using font: " << font << std::endl;
+        m_color = color;
+        m_ttffont = TTF_OpenFont(font, fontsize);
 
-        if(TTF_OpenFont(font, fontsize) == NULL) //NULL CHECK (kinda like a vibe check)
+        if(TTF_OpenFont(font, fontsize) == NULL)
         {
-            cout<<SDL_GetError()<<endl;  //problem with loading font file
+            // Error: Couldn't load the font file
+            std::cout << SDL_GetError() << std::endl;
         }
 
-        if(TTF_RenderText_Solid(ttffont,"default",colour) == NULL)
+        if(TTF_RenderText_Solid(m_ttffont, "default", color) == NULL)
         {
-            cout<<SDL_GetError()<<endl;
+            // Error: Couldn't render the text
+            std::cout << SDL_GetError() << std::endl;
         }
-       params = parameters;
+        
+       m_parameters = parameters;
     }
 
-    void Update(const char* text,SDL_Surface* &screen, bool visible)
+    void Update(const char* text, SDL_Surface* &screen, bool visible)
     {
         if(visible)
         {
-            textSurface = TTF_RenderText_Solid(ttffont,text,colour);
-            SDL_BlitSurface(textSurface,NULL,screen,&params);
+            m_textSurface = TTF_RenderText_Solid(m_ttffont, text, m_color);
+            SDL_BlitSurface(m_textSurface, NULL, screen, &m_parameters);
         }
     }
 
-    void Yeet()
+    void Free()
     {
-        TTF_CloseFont(ttffont);
-        SDL_FreeSurface(textSurface);
+        TTF_CloseFont(m_ttffont);
+        SDL_FreeSurface(m_textSurface);
     }
-
 };
+
+
+#endif
