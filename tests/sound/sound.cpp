@@ -8,24 +8,28 @@ int main(int argc, char** argv)
 	// Window
 	
 	bool quit = false;
-	Window window(100, 100, 1280, 720, "Audio Test");
+	EZDL_Window window(100, 100, 1280, 720, "Audio Test");
 	
 	// Sound
 	
 	const char* path = "dark_forest.wav";
 	int length = (2 * 60 + 46) * 1000;
 	
-	Sound s;
+	EZDL_Sound s;
 	s.play(path, length);
 	
 	// Main loop
 	
+	SDL_Event e;
 	while(!quit)
 	{
 		window.update(quit);
 		// ...
-		// quit = true;
 		window.clearScreen();
+		// ...
+		while(SDL_PollEvent(&e) != 0)
+        	if(e.type == SDL_QUIT)
+            	quit = true;		
 	}
 	
 	SDL_Quit();
