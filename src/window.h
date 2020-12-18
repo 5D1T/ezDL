@@ -19,7 +19,7 @@ public:
     SDL_Window* wh = NULL;
     SDL_Surface* screen = NULL;
 
-    Window(int x,int y, int w, int h, const char* name)
+    Window(int x, int y, int w, int h, const char* name)
     {
         m_screenrect.x = x;
         m_screenrect.y = y;
