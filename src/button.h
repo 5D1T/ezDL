@@ -22,11 +22,9 @@ public:
             m_click = true;
             break;
         case SDL_MOUSEBUTTONUP:
-            if(m_click &&
-              (m_mouseX > m_params.x && m_mouseX < m_params.x + m_params.w) &&
-              (m_mouseY > m_params.y && m_mouseY < m_params.y + m_params.h))
-		 flip = true;
-            else flip = false;
+            flip = (m_click &&
+                   (m_mouseX > m_params.x && m_mouseX < m_params.x + m_params.w) &&
+                   (m_mouseY > m_params.y && m_mouseY < m_params.y + m_params.h));
             m_click = false;
             break;
         }
