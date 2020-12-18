@@ -11,12 +11,12 @@
 #include "SDL2/SDL_ttf.h"
 
 // ezDL
-#include "window.h"
-#include "GUIelement.h"
+#include "UIelement.h"
 #include "button.h"
-#include "text.h"
-#include "sound.h"
 #include "file.h"
+#include "sound.h"
+#include "text.h"
+#include "window.h"
 
 
 #endif
