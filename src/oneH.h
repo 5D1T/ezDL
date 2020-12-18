@@ -1,9 +1,3 @@
-/*
-** oneH.h
-** Header file including all the necessary header files
-*/
-
-
 #ifndef EZDL_ONEH_H
 #define EZDL_ONEH_H
 
