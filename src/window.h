@@ -15,7 +15,7 @@ public:
     SDL_Window* wh = NULL;
     SDL_Surface* screen = NULL;
 
-    Window(size_t x, size_t y, size_t w, size_t h, const char* name)
+    EZDL_Window(size_t x, size_t y, size_t w, size_t h, const char* name)
     {
         m_screenrect.x = x;
         m_screenrect.y = y;
