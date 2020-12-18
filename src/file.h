@@ -1,5 +1,5 @@
-#ifndef FILE_H_INCLUDED
-#define FILE_H_INCLUDED
+#ifndef EZDL_FILE_H
+#define EZDL_FILE_H
 
 #include <iostream>
 #include <fstream>
