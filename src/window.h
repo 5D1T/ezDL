@@ -33,8 +33,12 @@ public:
         SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
         while(SDL_PollEvent(&m_event) != 0)
+        {
             if(m_event.type == SDL_QUIT)
+            {
                 quit_flag = true;
+            }
+        }
     }
 
     void clearScreen()
