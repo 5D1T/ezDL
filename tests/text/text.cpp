@@ -9,7 +9,7 @@ int main(int argc, char** argv)
 	// Window
 	
 	bool quit = false;
-	Window window(100, 100, 1280, 720, "Text Test");
+	EZDL_Window window(100, 100, 1280, 720, "Text Test");
 	
 	// Text
 	
@@ -18,17 +18,21 @@ int main(int argc, char** argv)
 	const char* font_path = "vampiress.ttf";
 	SDL_Rect parameters = {300, 100, 1280, 100};
 	
-	Text t(color, font_size, font_path, parameters);
+	EZDL_Text t(color, font_size, font_path, parameters);
 	
 	// Main loop
 	
+	SDL_Event e;
 	while(!quit)
 	{
 		window.update(quit);
 		t.update("Text", window.screen, true);
 		// ...
-		// quit = true;
 		window.clearScreen();
+		// ...
+		while(SDL_PollEvent(&e) != 0)
+        	if(e.type == SDL_QUIT)
+            	quit = true;
 	}
 	
 	TTF_Quit();
