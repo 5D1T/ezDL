@@ -1,4 +1,4 @@
-#include "../../src/oneH.h"
+#include "src/oneH.h"
 
 
 int main(int argc, char** argv)
@@ -12,15 +12,18 @@ int main(int argc, char** argv)
 	const char* name = "Window Test";
 
 	bool quit = false;
-	Window window(x, y, width, height, name);
+	EZDL_Window window(x, y, width, height, name);
 
+	SDL_Event e;
 	while(!quit)
 	{
 		window.update(quit);
 		// ...
 		window.clearScreen();
 		// ...
-		// quit = true;
+		while(SDL_PollEvent(&e) != 0)
+        		if(e.type == SDL_QUIT)
+            			quit = true;
 	}
 
 	SDL_Quit();
