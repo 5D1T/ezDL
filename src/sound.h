@@ -1,12 +1,7 @@
-/*
-** sound.h
-** Wrapper for SDL's audio manipulation, allowing much easier use
-*/
-
-
 #ifndef EZDL_SOUND_H
 #define EZDL_SOUND_H
 
+#include <cstdddef>
 #include <iostream>
 #include <thread>
 
@@ -14,7 +9,7 @@
 class Sound
 {
 private:
-    static void playSound(const char* path, int lenght)
+    static void playSound(const char* path, size_t lenght)
     {
         SDL_AudioSpec soundSpec;
         Uint8 *soundBuffer;
@@ -37,7 +32,7 @@ private:
         SDL_FreeWAV(soundBuffer);
     }
 public:
-    void play(const char* path, int lenght)
+    void play(const char* path, size_t lenght)
     {
         std::thread t;
         t = std::thread(playSound, path, lenght);
