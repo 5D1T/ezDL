@@ -29,13 +29,13 @@ public:
             break;
         case SDL_MOUSEBUTTONUP: 
             if(m_click &&
-              (m_mouseX > params.x && m_mouseX < params.x + params.w) &&
-              (m_mouseY > params.y && m_mouseY < params.y + params.h))
+              (m_mouseX > m_params.x && m_mouseX < m_params.x + m_params.w) &&
+              (m_mouseY > m_params.y && m_mouseY < m_params.y + m_params.h))
               flip ^= 1;
             m_click = false;
             break;
         }
-        SDL_BlitSurface(m_texture, &params, screen, &params);
+        SDL_BlitSurface(m_texture, &m_params, screen, &params);
     }
 };
 
