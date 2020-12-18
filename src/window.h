@@ -25,7 +25,7 @@ public:
         m_screenrect.y = y;
         m_screenrect.w = w;
         m_screenrect.h = h;
-        wh = SDL_CreateWindow(name, screenrect.x, screenrect.y, screenrect.w, screenrect.h, SDL_WINDOW_SHOWN);
+        wh = SDL_CreateWindow(name, m_screenrect.x, m_screenrect.y, m_screenrect.w, m_screenrect.h, SDL_WINDOW_SHOWN);
         if(wh == NULL)
         {
             std::cout << "Error: Couldn't create the window" << std::endl;
