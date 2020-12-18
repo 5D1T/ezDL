@@ -30,8 +30,11 @@ int main(int argc, char** argv)
 		window.update(quit);
 		b.update(e, flip, window.screen);
 		// ...
-		// quit = true;
 		window.clearScreen();
+		// ...
+		while(SDL_PollEvent(&e) != 0)
+        		if(e.type == SDL_QUIT)
+            			quit = true;
 	}
 	
 	SDL_Quit();
