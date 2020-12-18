@@ -5,7 +5,7 @@
 #include <fstream>
 
 
-class File
+class EZDL_File
 {
 private:
     std::ofstream writer;
