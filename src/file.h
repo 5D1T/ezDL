@@ -1,3 +1,9 @@
+/*
+** file.h
+** A little wrappere for <fstream> allowing much simpler I/O
+*/
+
+
 #ifndef EZDL_FILE_H
 #define EZDL_FILE_H
 
@@ -13,8 +19,7 @@ private:
     const char* data = NULL;
 
 public:
-
-    char* Read(const char* path)
+    char* read(const char* path)
     {
         if(path == NULL)
         {
@@ -42,7 +47,7 @@ public:
         }
     }
 
-    void Write(const char* path, const char* in)
+    void write(const char* path, const char* in)
     {
         writer.open(path,ifstream::out);
         if(writer.is_open())
@@ -52,7 +57,7 @@ public:
         }
     }
 
-    void Clear(const char* path)
+    void clear(const char* path)
     {
         writer.open(path,ifstream::trunc);
         if(writer.is_open())
