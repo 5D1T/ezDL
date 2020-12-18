@@ -23,8 +23,8 @@ public:
             break;
         case SDL_MOUSEBUTTONUP:
             state = (m_click &&
-                    (m_mouseX > m_params.x && m_mouseX < m_params.x + m_params.w) &&
-                    (m_mouseY > m_params.y && m_mouseY < m_params.y + m_params.h));
+                    (m_mouseX >= m_params.x && m_mouseX <= m_params.x + m_params.w) &&
+                    (m_mouseY >= m_params.y && m_mouseY <= m_params.y + m_params.h));
             m_click = false;
             break;
         }
