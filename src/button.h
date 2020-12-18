@@ -5,7 +5,7 @@
 #include <thread>
 
 
-class Button: public GUIelement
+class Button: public UIelement
 {
 private:
     int m_mouseX = 0;
