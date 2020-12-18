@@ -10,13 +10,13 @@ int main(int argc, char** argv)
 	bool quit = false;
 	EZDL_Window window(100, 100, 1280, 720, "Audio Test");
 	
-	// Sound
+	// Audio
 	
 	const char* path = "dark_forest.wav";
 	int length = (2 * 60 + 46) * 1000;
 	
-	EZDL_Sound s;
-	s.play(path, length);
+	EZDL_Audio a;
+	a.play(path, length);
 	
 	// Main loop
 	
