@@ -24,7 +24,7 @@ public:
         m_params.w = w;
         m_texture = SDL_LoadBMP(path);
         // std::cout << "path: " << path << std::endl;
-        if(texture == NULL) 
+        if(m_texture == NULL) 
         {
             std::cout << "Error: Texture of a GUI element is NULL" << std::endl;
             std::cout << SDL_GetError() << std::endl;
