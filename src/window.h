@@ -7,7 +7,6 @@
 class EZDL_Window
 {
 private:
-    friend class EZDL_UIelement;
     SDL_Event m_event;
     SDL_Rect m_screenrect;
     
