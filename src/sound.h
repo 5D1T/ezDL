@@ -39,9 +39,9 @@ private:
 public:
     void play(const char* path, int lenght)
     {
-        thread t1;
-        t1 = thread(playSound, path, lenght);
-        t1.detach();
+        std::thread t;
+        t = thread(playSound, path, lenght);
+        t.detach();
     }
 };
 
