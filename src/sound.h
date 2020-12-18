@@ -1,3 +1,9 @@
+/*
+** sound.h
+** Wrapper for SDL's audio manipulation, allowing much easier use
+*/
+
+
 #ifndef EZDL_SOUND_H
 #define EZDL_SOUND_H
 
