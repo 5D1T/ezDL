@@ -1,6 +1,6 @@
 /*
 ** file.h
-** A little wrappere for <fstream> allowing much simpler I/O
+** Wrapper for <fstream> allowing much simpler I/O
 */
 
 
