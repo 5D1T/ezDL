@@ -1,3 +1,9 @@
+/*
+** window.h
+** Wrapper for SDL's window manipulation
+*/
+
+
 #ifndef EZDL_WINDOW_H
 #define EZDL_WINDOW_H
 
@@ -22,12 +28,11 @@ public:
         wh = SDL_CreateWindow(name, screenrect.x, screenrect.y, screenrect.w, screenrect.h, SDL_WINDOW_SHOWN);
         if(wh == NULL)
         {
-            // Errror: Couldn't create the window
             std::cout << "Error: Couldn't create the window" << std::endl;
         }
     }
 
-    void Update(bool &quitflag)
+    void update(bool &quitflag)
     {
         screen = SDL_GetWindowSurface(wh);
         SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255,255,255));
@@ -44,7 +49,7 @@ public:
         }
     }
 
-    void ClearScreen()
+    void clearScreen()
     {
         SDL_UpdateWindowSurface(wh);
     }
