@@ -13,7 +13,7 @@ private:
     bool m_click = false;
 
 public:
-    void update(const SDL_Event &e, bool &flip, SDL_Surface* screen)
+    void update(const SDL_Event &e, bool &state, SDL_Surface* screen)
     {
         SDL_GetMouseState(&m_mouseX, &m_mouseY);
         switch(e.type)
@@ -22,9 +22,9 @@ public:
             m_click = true;
             break;
         case SDL_MOUSEBUTTONUP:
-            flip = (m_click &&
-                   (m_mouseX > m_params.x && m_mouseX < m_params.x + m_params.w) &&
-                   (m_mouseY > m_params.y && m_mouseY < m_params.y + m_params.h));
+            state = (m_click &&
+                    (m_mouseX > m_params.x && m_mouseX < m_params.x + m_params.w) &&
+                    (m_mouseY > m_params.y && m_mouseY < m_params.y + m_params.h));
             m_click = false;
             break;
         }
