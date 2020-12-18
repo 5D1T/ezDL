@@ -1,6 +1,6 @@
 /*
 ** oneH.h
-** A header file including all the necessery header files
+** Header file including all the necessery header files
 */
 
 
