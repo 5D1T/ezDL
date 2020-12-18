@@ -1,5 +1,5 @@
-#ifndef SOUND_H_INCLUDED
-#define SOUND_H_INCLUDED
+#ifndef EZDL_SOUND_H
+#define EZDL_SOUND_H
 
 #include <iostream>
 #include <thread>
