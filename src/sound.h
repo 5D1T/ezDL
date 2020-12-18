@@ -14,7 +14,7 @@
 class Sound
 {
 private:
-    static void PlaySound(const char* path, int lenght)
+    static void playSound(const char* path, int lenght)
     {
         SDL_AudioSpec soundSpec;
         Uint8 *soundBuffer;
@@ -37,10 +37,10 @@ private:
         SDL_FreeWAV(soundBuffer);
     }
 public:
-    void Play(const char* path, int lenght)
+    void play(const char* path, int lenght)
     {
         thread t1;
-        t1 = thread(PlaySound, path, lenght);
+        t1 = thread(playSound, path, lenght);
         t1.detach();
     }
 };
