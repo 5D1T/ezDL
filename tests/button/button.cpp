@@ -1,4 +1,5 @@
-#include "src/oneH.h"
+#include <iostream>
+#include "src/ezDL.h"
 
 
 int main(int argc, char** argv)
@@ -19,18 +20,23 @@ int main(int argc, char** argv)
 	const char* texture_path = "cheese.bmp";
 	
 	SDL_Event e;
-	bool flip = false;
+	bool state = false;
 	EZDL_Button b;
-	b.init(x, y, width, height, texture_path);
+	b.set(x, y, width, height, texture_path);
 	
 	// Main loop
 	
 	while(!quit)
 	{
 		window.update(e, quit);
-		b.update(e, flip, window.screen);
+		b.update(e, state, window.screen);
 		// ...
 		window.clearScreen();
+		// ...
+		if(state)
+		{
+			std::cout << "clicked" << std::endl;
+		}
 	}
 	
 	SDL_Quit();
