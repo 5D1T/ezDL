@@ -1,6 +1,7 @@
 #ifndef EZDL_TEXT_H
 #define EZDL_TEXT_H
 
+#include "error.h"
 #include <cstddef>
 #include <iostream>
 
@@ -16,21 +17,11 @@ private:
 public:
     EZDL_Text(SDL_Color color, size_t fontsize, const char* font, SDL_Rect params)
     {
-        // std::cout << ">> using font: " << font << std::endl;
         m_color = color;
         m_ttffont = TTF_OpenFont(font, fontsize);
 
-        if(TTF_OpenFont(font, fontsize) == NULL)
-        {
-            // Error: Couldn't load the font file
-            std::cout << SDL_GetError() << std::endl;
-        }
-
-        if(TTF_RenderText_Solid(m_ttffont, "default", color) == NULL)
-        {
-            // Error: Couldn't render the text
-            std::cout << SDL_GetError() << std::endl;
-        }
+        EZDL_Assert(TTF_OpenFont(font, fontsize)                      != NULL, "Couldn't load the font file");
+        EZDL_Assert(TTF_RenderText_Solid(m_ttffont, "default", color) != NULL, "Couldn't render the text");
         
        m_params = params;
     }
