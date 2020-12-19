@@ -22,4 +22,5 @@ int main(int argc, char** argv)
 	std::cout << "Writed to file: '" << write << '\'' << std::endl;
 
 	SDL_Quit();
+	return 0;
 }
