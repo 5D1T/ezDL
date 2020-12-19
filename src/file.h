@@ -1,6 +1,7 @@
 #ifndef EZDL_FILE_H
 #define EZDL_FILE_H
 
+#include "error.h"
 #include <iostream>
 #include <fstream>
 
@@ -15,13 +16,9 @@ private:
 public:
     char* read(const char* path)
     {
-        if(path == NULL)
-        {
-            std::cout << "Error: The part for FileRead is NULL" << std::endl;
-        }
+        EZDL_Assert(path != NULL, "Path for reading the file is NULL");
         
         reader.open(path, std::ifstream::in);
-        
         if(reader.is_open())
         {
             reader.seekg(0, reader.end);
@@ -37,7 +34,7 @@ public:
         }
         else
         {
-            std::cout << "Error: Couldn't open file" << std::endl;
+            EZDL_Error("Couldn't open the file for reading");
         }
     }
 
@@ -48,6 +45,10 @@ public:
         {
             writer << in;
             writer.close();
+        }
+        else
+        {
+            EZDL_Error("Couldn't open the file for writing");
         }
     }
 
@@ -61,7 +62,7 @@ public:
         }
         else
         {
-            std::cout << "Error: Couldn't open the file" << std::endl;
+            EZDL_Error("Couldn't open the file for clearing");
         }
     }
 };
