@@ -21,15 +21,14 @@ int main(int argc, char** argv)
 	
 	SDL_Event e;
 	bool state = false;
-	EZDL_Button b;
-	b.set(x, y, width, height, texture_path);
+	EZDL_Button b(x, y, width, height, texture_path);
 	
 	// Main loop
 	
 	while(!quit)
 	{
 		window.update(e, quit);
-		b.update(e, state, window.screen);
+		b.update(window.screen, e, state);
 		// ...
 		window.clearScreen();
 		// ...
