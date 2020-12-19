@@ -21,11 +21,10 @@ int main(int argc, char** argv)
 	SDL_Event e;
 	bool flip = false;
 	EZDL_Button b;
-	b.start(x, y, width, height, texture_path);
+	b.init(x, y, width, height, texture_path);
 	
 	// Main loop
 	
-	SDL_Event e;
 	while(!quit)
 	{
 		window.update(quit);
