@@ -7,7 +7,6 @@
 class EZDL_Window
 {
 private:
-    SDL_Event m_event;
     SDL_Rect m_screenrect;
 
 public:
@@ -21,14 +20,14 @@ public:
         EZDL_Assert(wh != NULL, "Couldn't create the window");
     }
 
-    void update(bool &quit)
+    void update(SDL_Event &e, bool &quit)
     {
         screen = SDL_GetWindowSurface(wh);
         SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
-        while(SDL_PollEvent(&m_event) != 0)
+        while(SDL_PollEvent(&e))
         {
-            if(m_event.type == SDL_QUIT)
+            if(e.type == SDL_QUIT)
             {
                 quit = true;
             }
