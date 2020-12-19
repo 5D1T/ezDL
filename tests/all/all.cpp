@@ -1,4 +1,4 @@
-#include "src/oneH.h"
+#include "src/ezDL.h"
 
 
 int main(int argc, char** argv)
@@ -25,7 +25,7 @@ int main(int argc, char** argv)
 	SDL_Event e;
 	EZDL_Button b;
 	bool state = false;
-	b.init(390, 110, 500, 500, "cheese.bmp");
+	b.set(390, 110, 500, 500, "cheese.bmp");
 
 	// Main loop
 
