@@ -27,7 +27,7 @@ int main(int argc, char** argv)
 	
 	while(!quit)
 	{
-		window.update(quit);
+		window.update(e, quit);
 		b.update(e, flip, window.screen);
 		// ...
 		window.clearScreen();
