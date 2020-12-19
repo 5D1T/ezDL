@@ -11,7 +11,7 @@ private:
     bool m_click = false;
 
 public:
-    void update(SDL_Event &e, bool &state, SDL_Surface* screen)
+    void update(const SDL_Event &e, bool &state, SDL_Surface* screen)
     {
         switch(e.type)
         {
