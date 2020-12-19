@@ -1,7 +1,6 @@
 #ifndef EZDL_AUDIO_H
 #define EZDL_AUDIO_H
 
-#include "error.h"
 #include <cstddef>
 #include <iostream>
 #include <thread>
