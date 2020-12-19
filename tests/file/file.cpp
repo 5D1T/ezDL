@@ -6,19 +6,19 @@ int main(int argc, char** argv)
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	
-	EZDL_File f;
-	const char* file_name = "test";
+	const char* file_path = "test";
+	EZDL_File f(file_path);
 
 	// Read
-	std::cout << "Read from file: '" << f.read(file_name) << '\'' << std::endl;
+	std::cout << "Read from file: '" << f.read() << '\'' << std::endl;
 
 	// Clear
-	f.clear(file_name);
+	f.clear();
 	std::cout << "Cleared the file" << std::endl;
 
 	// Write
 	const char* write = "EZDL File writing test";
-	f.write(file_name, write);
+	f.write(write);
 	std::cout << "Writed to file: '" << write << '\'' << std::endl;
 
 	SDL_Quit();
