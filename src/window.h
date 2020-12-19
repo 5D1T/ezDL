@@ -1,8 +1,6 @@
 #ifndef EZDL_WINDOW_H
 #define EZDL_WINDOW_H
 
-#include "error.h"
-
 
 class EZDL_Window
 {
