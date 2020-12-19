@@ -22,9 +22,10 @@ int main(int argc, char** argv)
 	
 	// Main loop
 	
+	SDL_Event e;
 	while(!quit)
 	{
-		window.update(quit);
+		window.update(e, quit);
 		t.update("Text", window.screen, true);
 		// ...
 		window.clearScreen();
