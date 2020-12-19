@@ -1,7 +1,6 @@
 #ifndef EZDL_TEXT_H
 #define EZDL_TEXT_H
 
-#include "error.h"
 #include <cstddef>
 #include <iostream>
 
