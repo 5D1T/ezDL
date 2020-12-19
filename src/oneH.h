@@ -11,7 +11,8 @@
 #include "SDL2/SDL_ttf.h"
 
 // ezDL
-#include "UIelement.h"
+#include "error.h"
+#include "sprite.h"
 #include "button.h"
 #include "file.h"
 #include "audio.h"
