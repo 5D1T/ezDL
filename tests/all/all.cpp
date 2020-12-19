@@ -13,27 +13,26 @@ int main(int argc, char** argv)
 
 	// Text
 
-	EZDL_Text t({0,0,0}, 250, "vampiress.ttf", {20, 20, 1280, 100});
+	EZDL_Text t(200, "vampiress.ttf", {0,0,0}, {20, 20, 1280, 100});
 
 	// Audio
 
-	EZDL_Audio a;
-	a.play("dark_forest.wav", (2 * 60 + 46) * 1000);
+	EZDL_Audio a("dark_forest.wav", (2 * 60 + 46) * 1000);
+	a.play();
 
 	// Button
 
 	SDL_Event e;
-	EZDL_Button b;
 	bool state = false;
-	b.set(390, 110, 500, 500, "cheese.bmp");
+	EZDL_Button b(390, 110, 500, 500, "cheese.bmp");
 
 	// Main loop
 
 	while(!quit)
 	{
 		w.update(e, quit);
-		t.update("EZDL", w.screen, true);
-		b.update(e, state, w.screen);
+		t.update(w.screen, "EZDL", true);
+		b.update(w.screen, e, state);
 		w.clearScreen();
 
 		if(state)
