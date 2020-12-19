@@ -5,7 +5,7 @@
 #include <thread>
 
 
-class EZDL_Button: public EZDL_UIelement
+class EZDL_Button: public EZDL_Sprite
 {
 private:
     int m_mouseX = 0;
