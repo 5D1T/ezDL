@@ -12,7 +12,7 @@ protected:
     SDL_Surface* m_texture = NULL;
 
 public:
-    void init(int x, int y, int w, int h, const char* path)
+    void set(int x, int y, int w, int h, const char* path)
     {
         m_params = {x, y, w, h};
         m_texture = SDL_LoadBMP(path);
