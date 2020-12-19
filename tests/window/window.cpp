@@ -14,9 +14,10 @@ int main(int argc, char** argv)
 	bool quit = false;
 	EZDL_Window window(x, y, width, height, name);
 
+	SDL_Event e;
 	while(!quit)
 	{
-		window.update(quit);
+		window.update(e, quit);
 		// ...
 		window.clearScreen();
 	}
