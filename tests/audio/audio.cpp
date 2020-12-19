@@ -10,7 +10,7 @@ int main(int argc, char** argv)
 	bool quit = false;
 	EZDL_Window window(100, 100, 1280, 720, "Audio Test");
 	
-	// Audio
+	// Sound
 	
 	const char* path = "dark_forest.wav";
 	int length = (2 * 60 + 46) * 1000;
@@ -20,9 +20,10 @@ int main(int argc, char** argv)
 	
 	// Main loop
 	
+	SDL_Event e;
 	while(!quit)
 	{
-		window.update(quit);
+		window.update(e, quit);
 		// ...
 		window.clearScreen();	
 	}
