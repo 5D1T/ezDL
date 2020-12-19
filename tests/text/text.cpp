@@ -18,7 +18,7 @@ int main(int argc, char** argv)
 	const char* font_path = "vampiress.ttf";
 	SDL_Rect parameters = {300, 100, 1280, 100};
 	
-	EZDL_Text t(color, font_size, font_path, parameters);
+	EZDL_Text t(font_size, font_path, color, parameters);
 	
 	// Main loop
 	
@@ -26,7 +26,7 @@ int main(int argc, char** argv)
 	while(!quit)
 	{
 		window.update(e, quit);
-		t.update("Text", window.screen, true);
+		t.update(window.screen, "Text", true);
 		// ...
 		window.clearScreen();
 	}
