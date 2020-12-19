@@ -24,12 +24,6 @@ public:
 	    m_params = params;
 	}
 
-	~EZDL_Text()
-	{
-		TTF_CloseFont(m_ttffont);
-	    SDL_FreeSurface(m_textSurface);
-	}
-
 	void update(SDL_Surface* screen, const char* text, bool visible)
 	{
 	    if(visible)
@@ -37,6 +31,12 @@ public:
 	        m_textSurface = TTF_RenderText_Solid(m_ttffont, text, m_color);
 	        SDL_BlitSurface(m_textSurface, NULL, screen, &m_params);
 	    }
+	}
+
+	void free()
+	{
+		TTF_CloseFont(m_ttffont);
+	    SDL_FreeSurface(m_textSurface);
 	}
 };
 
