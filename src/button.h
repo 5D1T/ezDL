@@ -8,14 +8,11 @@
 class EZDL_Button: public EZDL_Sprite
 {
 private:
-    int m_mouseX = 0;
-    int m_mouseY = 0;
     bool m_click = false;
 
 public:
-    void update(const SDL_Event &e, bool &state, SDL_Surface* screen)
+    void update(SDL_Event &e, bool &state, SDL_Surface* screen)
     {
-        SDL_GetMouseState(&m_mouseX, &m_mouseY);
         switch(e.type)
         {
         case SDL_MOUSEBUTTONDOWN:
@@ -23,8 +20,8 @@ public:
             break;
         case SDL_MOUSEBUTTONUP:
             state = (m_click &&
-                    (m_mouseX >= m_params.x && m_mouseX <= m_params.x + m_params.w) &&
-                    (m_mouseY >= m_params.y && m_mouseY <= m_params.y + m_params.h));
+                    (e.button.x >= m_params.x && e.button.x <= m_params.x + m_params.w) &&
+                    (e.button.y >= m_params.y && e.button.y <= m_params.y + m_params.h));
             m_click = false;
             break;
         }
