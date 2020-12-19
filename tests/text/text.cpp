@@ -22,7 +22,6 @@ int main(int argc, char** argv)
 	
 	// Main loop
 	
-	SDL_Event e;
 	while(!quit)
 	{
 		window.update(quit);
