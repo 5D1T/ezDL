@@ -4,33 +4,23 @@
 int main(int argc, char** argv)
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
-	TTF_Init();
-	
-	// Window
-	
+
+	int x = 100;
+	int y = 100;
+	int width  = 1280;
+	int height = 720;
+	const char* name = "Window Test";
+
 	bool quit = false;
-	EZDL_Window window(100, 100, 1280, 720, "Text Test");
-	
-	// Text
-	
-	SDL_Color color = {0, 0, 0};
-	int font_size = 350;
-	const char* font_path = "vampiress.ttf";
-	SDL_Rect parameters = {300, 100, 1280, 100};
-	
-	EZDL_Text t(color, font_size, font_path, parameters);
-	
-	// Main loop
-	
+	EZDL_Window window(x, y, width, height, name);
+
 	SDL_Event e;
 	while(!quit)
 	{
 		window.update(e, quit);
-		t.update("Text", window.screen, true);
 		// ...
 		window.clearScreen();
 	}
-	
-	TTF_Quit();
+
 	SDL_Quit();
 }
