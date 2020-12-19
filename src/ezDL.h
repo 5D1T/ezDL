@@ -1,5 +1,5 @@
-#ifndef EZDL_EZDL_H
-#define EZDL_EZDL_H
+#ifndef EZDL_H
+#define EZDL_H
 
 
 // stdlib
