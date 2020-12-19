@@ -15,8 +15,8 @@ int main(int argc, char** argv)
 	const char* path = "dark_forest.wav";
 	int length = (2 * 60 + 46) * 1000;
 	
-	EZDL_Audio a;
-	a.play(path, length);
+	EZDL_Audio a(path, length);
+	a.play();
 	
 	// Main loop
 	
